@@ -34,6 +34,8 @@ class ponto{
 
     public:
        float pointsize;
+
+       ponto();
        ponto (ponto (*functocall)(ponto,ponto,float));
        ponto(int x, int y){
             this->x = x;
@@ -94,6 +96,7 @@ std::ostream& operator<<(std::ostream& out, ponto p1){
 class Cor{
 
 public:
+    Cor();
     Cor(float r, float g, float b){
         this->r = r;
         this->g = g;
@@ -127,30 +130,16 @@ std::ostream& operator<<(std::ostream& out, Cor c1){
     return out <<"("<<c1.get_r()<<","<<c1.get_g()<<","<<c1.get_b()<<")";
 }
 
-class CaixaDeCor{
-private:
 
 
-public:
+class CaixaCor public:ponto public:{
+
 
 };
-
-
-
-
-
-
-
-
-
-
 
 ponto BotaoMouse(0,0,5.0f);
 // GLOBAIS
 vector<ponto> Pontos;
-
-
-
 
 void desenhaEixos(){
     line(0,DIM_TELA/2,DIM_TELA,DIM_TELA/2);
@@ -165,7 +154,10 @@ void MouseDrag(int x, int y){
 
 void render()
 {
-//    Cor c1(1.0f,1.0f,1.0f);
+    Cor c1(1.0,1.0f,1.0f);
+    ponto p1(200,200);
+    CaixaCor quad(p1,c1);
+
 
 }
 
