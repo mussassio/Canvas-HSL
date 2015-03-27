@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1380307246 source:c:\ufsm\disciplinas\computacao grafica\programas\gl_4_canvas\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1380307238 c:\ufsm\disciplinas\computacao grafica\programas\gl_4_canvas\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+
+924727706 c:\ufsm\disciplinas\computacao grafica\programas\gl_4_canvas\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1254353242 c:\ufsm\disciplinas\computacao grafica\programas\gl_4_canvas\include\gl\gl.h
+
+1254353242 c:\ufsm\disciplinas\computacao grafica\programas\gl_4_canvas\include\gl\glu.h
+	<GL/gl.h>
+
