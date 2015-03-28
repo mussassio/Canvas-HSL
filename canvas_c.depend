@@ -169,3 +169,37 @@
 1425536170 c:\vinicius\cg\canvas-hsl\canvas-hsl\include\gl\glu.h
 	<GL/gl.h>
 
+1427492965 source:c:\users\vinicius7\desktop\vinicius\cc\cg\canvas-hsl\src\canvas_c.cpp
+
+1427492965 source:c:\users\vinicius7\desktop\vinicius\cc\cg\canvas-hsl\src\gl_canvas2d.cpp
+	"canvas drawing.cpp"
+	<GL/glut.h>
+
+1427501115 c:\users\vinicius7\desktop\vinicius\cc\cg\canvas-hsl\src\canvas drawing.cpp
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<iostream>
+	<vector>
+	<ostream>
+	<cmath>
+	"gl_canvas2d.h"
+
+1427492965 c:\users\vinicius7\desktop\vinicius\cc\cg\canvas-hsl\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+
+1427492965 c:\users\vinicius7\desktop\vinicius\cc\cg\canvas-hsl\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1427492965 c:\users\vinicius7\desktop\vinicius\cc\cg\canvas-hsl\include\gl\gl.h
+
+1427492965 c:\users\vinicius7\desktop\vinicius\cc\cg\canvas-hsl\include\gl\glu.h
+	<GL/gl.h>
+

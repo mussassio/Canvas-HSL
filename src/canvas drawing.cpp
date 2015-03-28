@@ -30,63 +30,64 @@ using namespace std;
 
 float x_g,y_g, x2_g, y2_g = 0;
 
-class ponto{
+    class ponto{
 
-    public:
-       float pointsize;
+        public:
+           float pointsize;
 
-       ponto();
-       ponto (ponto (*functocall)(ponto,ponto,float));
-       ponto(int x, int y){
-            this->x = x;
-            this->y = y;
-        }
-        ponto(int x, int y,float tam){
-            this->x = x;
-            this->y = y;
-            this->pointsize = tam;
-        }
-        void operator=(const ponto& p1){
-            this->x = p1.x;
-            this->y = p1.y;
-        }
-      ponto operator+(const ponto& p1){
-            return ponto(this->x + p1.x, this->y + p1.y);
-        }
-       ponto operator*(float a){
-            return ponto(a * this->x, a * this->y);
-        }
-        ponto operator*(int a){
-            return ponto(a * this->x, a * this->y);
-        }
-         ponto operator*(double a){
-            return ponto(a * this->x, a * this->y);
-        }
-        void operator+=(ponto p0){
-            (*this) = (*this) + p0;
-        }
-        bool operator==(ponto p0){
-            if(p0.x == this->x && p0.y == this->y)
-                return true;
-            else return false;
-        }
-        bool DentroDaClickArea(ponto click){
-            if((click.x <= this->x + (this->pointsize/2) && click.x >= this->x - this->pointsize/2) &&  (click.y  <= this->y + this->pointsize/2 && click.y >= this->y - this->pointsize/2 ))
-                return true;
-            else return false;
-        }
-        float get_x(){
-            return this->x;
-        }
-        float get_y(){
-            return this->y;
-        }
+           ponto(){
+           }
+           ponto (ponto (*functocall)(ponto,ponto,float));
+           ponto(int x, int y){
+                this->x = x;
+                this->y = y;
+            }
+            ponto(int x, int y,float tam){
+                this->x = x;
+                this->y = y;
+                this->pointsize = tam;
+            }
+            void operator=(const ponto& p1){
+                this->x = p1.x;
+                this->y = p1.y;
+            }
+          ponto operator+(const ponto& p1){
+                return ponto(this->x + p1.x, this->y + p1.y);
+            }
+           ponto operator*(float a){
+                return ponto(a * this->x, a * this->y);
+            }
+            ponto operator*(int a){
+                return ponto(a * this->x, a * this->y);
+            }
+             ponto operator*(double a){
+                return ponto(a * this->x, a * this->y);
+            }
+            void operator+=(ponto p0){
+                (*this) = (*this) + p0;
+            }
+            bool operator==(ponto p0){
+                if(p0.x == this->x && p0.y == this->y)
+                    return true;
+                else return false;
+            }
+            bool DentroDaClickArea(ponto click){
+                if((click.x <= this->x + (this->pointsize/2) && click.x >= this->x - this->pointsize/2) &&  (click.y  <= this->y + this->pointsize/2 && click.y >= this->y - this->pointsize/2 ))
+                    return true;
+                else return false;
+            }
+            float get_x(){
+                return this->x;
+            }
+            float get_y(){
+                return this->y;
+            }
 
 
-    private:
-    float x;
-    float y;
-};
+        private:
+        float x;
+        float y;
+    };
 
 
 std::ostream& operator<<(std::ostream& out, ponto p1){
@@ -94,48 +95,58 @@ std::ostream& operator<<(std::ostream& out, ponto p1){
 }
 
 class Cor{
+    public:
+        Cor(){}
+        Cor(float r, float g, float b){
+            this->r = r;
+            this->g = g;
+            this->b = b;
+        }
+        inline float  get_r(){
+            return this->r;
+        }
+        inline float get_g(){
+            return this->g;
+        }
+        inline float get_b(){
+            return this->b;
+        }
+        void operator=(const Cor& c1){
 
-public:
-    Cor();
-    Cor(float r, float g, float b){
-        this->r = r;
-        this->g = g;
-        this->b = b;
+            this->r = c1.r;
+            this->g = c1.g;
+            this->b = c1.b;
+        }
+
+    private:
+
+        float r;
+        float g;
+        float b;
+
+    };
+
+    std::ostream& operator<<(std::ostream& out, Cor c1){
+        return out <<"("<<c1.get_r()<<","<<c1.get_g()<<","<<c1.get_b()<<")";
     }
-    inline float  get_r(){
-        return this->r;
-    }
-    inline float get_g(){
-        return this->g;
-    }
-    inline float get_b(){
-        return this->b;
-    }
-    void operator=(const Cor& c1){
-
-        this->r = c1.r;
-        this->g = c1.g;
-        this->b = c1.b;
-    }
-
-private:
-
-    float r;
-    float g;
-    float b;
-
-};
-
-std::ostream& operator<<(std::ostream& out, Cor c1){
-    return out <<"("<<c1.get_r()<<","<<c1.get_g()<<","<<c1.get_b()<<")";
-}
 
 
 
-class CaixaCor public:ponto public:{
-
-
-};
+class CaixaCor{
+    public:
+        CaixaCor(){}
+        CaixaCor(ponto p1, Cor c1){
+            this->p0 = p1;
+            this->c0 = c1;
+        }
+        void print(){
+            cout<<"Cor = "<<c0<<endl;
+            cout<<"ponto = "<<p0<<endl;
+        }
+    private:
+        ponto p0;
+        Cor c0;
+    };
 
 ponto BotaoMouse(0,0,5.0f);
 // GLOBAIS
@@ -157,6 +168,7 @@ void render()
     Cor c1(1.0,1.0f,1.0f);
     ponto p1(200,200);
     CaixaCor quad(p1,c1);
+    quad.print();
 
 
 }
